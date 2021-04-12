@@ -5,9 +5,22 @@
 class Game {
     constructor() {
         this.missed = 0;
-        this.phrases = [];
+        this.phrases = this.createPhrase();
         this.activePhrase = null;
     }
-}
 
-console.log("test-game");
+    /**
+     * Creates phrases for use in game
+     * @return  {Array} An array of new phrase objects
+     */
+    createPhrase() {
+        const phrases = [
+            new Phrase('Mama Bear Chelsea'),
+            new Phrase('Papa Kyle'),
+            new Phrase('First Born Wesley'),
+            new Phrase('Middle Child Warren'),
+            new Phrase('Princess of the World Addison')
+        ];
+        return phrases;
+    }
+}

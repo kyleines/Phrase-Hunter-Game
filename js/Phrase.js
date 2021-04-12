@@ -7,5 +7,3 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
     }
 }
-
-console.log("test-phrase");
