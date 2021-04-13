@@ -11,7 +11,7 @@ class Game {
 
     /**
      * Creates phrases for use in game
-     * @return  {Array} An array of new phrase objects
+     * @return  {Array}  An array of new phrase objects
      */
     createPhrase() {
         const phrases = [
@@ -22,5 +22,14 @@ class Game {
             new Phrase('Princess of the World Addison')
         ];
         return phrases;
+    }
+
+    /**
+     * Selects random phrase from phrases property
+     * @returns  {Object}  Phrase object chosen to be used
+     */
+    getRandomPhrase() {
+        let randomIndex = Math.floor(Math.random() * 4);
+        return this.phrases[randomIndex];
     }
 }
