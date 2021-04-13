@@ -32,4 +32,14 @@ class Game {
         let randomIndex = Math.floor(Math.random() * 4);
         return this.phrases[randomIndex];
     }
+
+    /**
+     * Begins game by selecting a random phrase and displaying it to the user
+     */
+    startGame() {
+        const startScreen = document.getElementById('overlay');
+        startScreen.style.display = 'none';
+        this.activePhrase = game.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
+    }
 }

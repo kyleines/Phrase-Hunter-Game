@@ -3,9 +3,19 @@
  * app.js */
 
 
-const game = new Game();
+let game = '';
+document.getElementById('btn__reset').addEventListener('click', () => {
+    game = new Game();
+    game.startGame();
+    console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+})
 
-game.getRandomPhrase().addPhraseToDisplay();
+
+// const game = new Game();
+// game.startGame();
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+
+// game.getRandomPhrase().addPhraseToDisplay();
 
 // game.phrases.forEach((phrase, index) => {
 //     console.log(`Phrase ${index} - phrase: ${phrase.phrase}`);
