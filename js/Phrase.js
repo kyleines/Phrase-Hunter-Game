@@ -36,7 +36,6 @@ class Phrase {
     */
     showMatchedLetter(letter) {
         let matched = document.getElementsByClassName(`hide letter ${letter}`);
-        console.log(matched);
         while (matched.length > 0) {
             matched[0].className = `show letter ${letter}`;
         }

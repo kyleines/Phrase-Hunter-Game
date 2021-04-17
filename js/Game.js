@@ -42,4 +42,14 @@ class Game {
         this.activePhrase = game.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
+
+    /**
+     * Checks for winning move
+     * @return  {boolean}   True if game has been won, false if game wasn't won
+    */
+    checkForWin() {
+        let hiddenLetters = document.getElementsByClassName('hide');
+        let win = '';
+        return hiddenLetters.length === 0 ? win = true : win = false;
+    }
 }
