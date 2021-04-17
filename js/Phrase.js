@@ -20,4 +20,25 @@ class Phrase {
             }
         }
     }
+
+    /**
+    * Checks if passed letter is in phrase
+    * @param    {string}    letter - Letter to check
+    * @returns  {boolean}   
+    */
+    checkLetter(letter) {
+        return this.phrase.includes(letter);
+    }
+
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param    {string}    letter  -   Letter to display
+    */
+    showMatchedLetter(letter) {
+        let matched = document.getElementsByClassName(`hide letter ${letter}`);
+        console.log(matched);
+        while (matched.length > 0) {
+            matched[0].className = `show letter ${letter}`;
+        }
+    }
 }
