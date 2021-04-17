@@ -63,7 +63,24 @@ class Game {
         lives[this.missed].innerHTML = `<img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30">`;
         this.missed++;
         if (this.missed === 5) {
-            console.log('you lose');
+            this.gameOver(false);
+        }
+    }
+
+    /**
+     * Displays game over message
+     * @param   {boolean}   gameWon -   Whether or not the user won the game
+     */
+    gameOver(gameWon) {
+        const gameOverMessage = document.getElementById('game-over-message');
+        if (gameWon) {
+            gameOverMessage.parentElement.style.display = '';
+            gameOverMessage.parentElement.className = 'win';
+            gameOverMessage.innerHTML = 'Congratulations!';
+        } else {
+            gameOverMessage.parentElement.style.display = '';
+            gameOverMessage.parentElement.className = 'lose';
+            gameOverMessage.innerHTML = 'Better luck next time!';
         }
     }
 }
