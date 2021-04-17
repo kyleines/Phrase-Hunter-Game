@@ -46,10 +46,24 @@ class Game {
     /**
      * Checks for winning move
      * @return  {boolean}   True if game has been won, false if game wasn't won
-    */
+     */
     checkForWin() {
         let hiddenLetters = document.getElementsByClassName('hide');
         let win = '';
         return hiddenLetters.length === 0 ? win = true : win = false;
+    }
+
+    /**
+     * Increases the value of the missed property
+     * Removes a life from the scoreboard
+     * Checks if player has remaining lives and ends game if player is out
+     */
+    removeLife() {
+        let lives = document.getElementsByClassName('tries');
+        lives[this.missed].innerHTML = `<img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30">`;
+        this.missed++;
+        if (this.missed === 5) {
+            console.log('you lose');
+        }
     }
 }
