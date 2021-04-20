@@ -76,11 +76,44 @@ class Game {
         if (gameWon) {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'win';
-            gameOverMessage.innerHTML = 'Congratulations!';
+            gameOverMessage.innerHTML = 'You Win! Congratulations!';
         } else {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'lose';
-            gameOverMessage.innerHTML = 'Better luck next time!';
+            gameOverMessage.innerHTML = 'You Lose! Better luck next time!';
         }
     }
+
+    /**
+     * Handles onscreen keyboard button clicks
+     * @param   {HTMLButtonElement} button  -   The clicked button element
+     */
+    handleInteraction(button) {
+        console.log(button);
+        button.disabled = true;
+        if (this.activePhrase.checkLetter(button.innerHTML)) {
+            button.className = 'chosen';
+            this.activePhrase.showMatchedLetter(button.innerHTML);
+            if (this.checkForWin()) {
+                this.gameOver(this.checkForWin());
+            }
+        } else {
+            button.className = 'wrong';
+            this.removeLife();
+        }
+    }
+
+    // gameReset() {
+    //     document.getElementById('phrase').firstElementChild.innerHTML = '';
+    //     const keys = document.getElementsByTagName('button');
+    //     for (let key of keys) {
+    //         console.log(key);
+    //         key.disabled = false;
+    //         key.className = 'key';
+    //     }
+    //     const hearts = document.getElementsByClassName('tries');
+    //     for (let heart of hearts) {
+    //         heart.innerHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`
+    //     }
+    // }
 }

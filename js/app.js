@@ -9,6 +9,12 @@ document.getElementById('btn__reset').addEventListener('click', () => {
     game.startGame();
     console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 })
+
+document.getElementById('qwerty').addEventListener('click', (e) => {
+    if (e.target.className === 'key') {
+        game.handleInteraction(e.target);
+    }
+})
 // ********************
 
 
