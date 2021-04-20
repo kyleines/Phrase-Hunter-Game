@@ -77,10 +77,12 @@ class Game {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'win';
             gameOverMessage.innerHTML = 'You Win! Congratulations!';
+            this.gameReset();
         } else {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'lose';
             gameOverMessage.innerHTML = 'You Lose! Better luck next time!';
+            this.gameReset();
         }
     }
 
@@ -89,7 +91,6 @@ class Game {
      * @param   {HTMLButtonElement} button  -   The clicked button element
      */
     handleInteraction(button) {
-        console.log(button);
         button.disabled = true;
         if (this.activePhrase.checkLetter(button.innerHTML)) {
             button.className = 'chosen';
@@ -103,17 +104,18 @@ class Game {
         }
     }
 
-    // gameReset() {
-    //     document.getElementById('phrase').firstElementChild.innerHTML = '';
-    //     const keys = document.getElementsByTagName('button');
-    //     for (let key of keys) {
-    //         console.log(key);
-    //         key.disabled = false;
-    //         key.className = 'key';
-    //     }
-    //     const hearts = document.getElementsByClassName('tries');
-    //     for (let heart of hearts) {
-    //         heart.innerHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`
-    //     }
-    // }
+    gameReset() {
+        document.getElementById('phrase').firstElementChild.innerHTML = '';
+        const keys = document.getElementsByTagName('button');
+        for (let key of keys) {
+            if (key.className === 'wrong' || key.className === 'chosen') {
+            key.disabled = false;
+            key.className = 'key';
+            }
+        }
+        const hearts = document.getElementsByClassName('tries');
+        for (let heart of hearts) {
+            heart.innerHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`
+        }
+    }
 }
