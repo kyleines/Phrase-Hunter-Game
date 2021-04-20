@@ -118,4 +118,13 @@ class Game {
             heart.innerHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`
         }
     }
+
+    handleKeyup(e) {
+        const keys = document.getElementsByTagName('button');
+        for (let key of keys) {
+            if (e.key === key.innerHTML) {
+                return key;
+            }
+        }
+    }
 }
