@@ -15,11 +15,16 @@ class Game {
      */
     createPhrase() {
         const phrases = [
-            new Phrase('Mama Bear Chelsea'),
-            new Phrase('Papa Kyle'),
-            new Phrase('First Born Wesley'),
-            new Phrase('Middle Child Warren'),
-            new Phrase('Princess of the World Addison')
+            new Phrase('Every Moment is a Fresh Beginning'),
+            new Phrase('Die with Memories Not Dreams'),
+            new Phrase('Ask Believe Recieve'),
+            new Phrase('What You Think You Become'),
+            new Phrase('The Ancestor of Every Action is Thought'),
+            new Phrase('Thoughts Become Things'),
+            new Phrase('Aspire to Inspire Before We Expire'),
+            new Phrase('Let the Beauty of What You Love Be What You Do'),
+            new Phrase('A Happy Soul is the Best Shield for a Cruel World'),
+            new Phrase('Hakuna Matata')
         ];
         return phrases;
     }
@@ -29,7 +34,7 @@ class Game {
      * @returns  {Object}  Phrase object chosen to be used
      */
     getRandomPhrase() {
-        let randomIndex = Math.floor(Math.random() * 5);
+        let randomIndex = Math.floor(Math.random() * 10);
         return this.phrases[randomIndex];
     }
 
