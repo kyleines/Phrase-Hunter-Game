@@ -29,7 +29,7 @@ class Game {
      * @returns  {Object}  Phrase object chosen to be used
      */
     getRandomPhrase() {
-        let randomIndex = Math.floor(Math.random() * 4);
+        let randomIndex = Math.floor(Math.random() * 5);
         return this.phrases[randomIndex];
     }
 
@@ -76,12 +76,12 @@ class Game {
         if (gameWon) {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'win';
-            gameOverMessage.innerHTML = 'You Win! Congratulations!';
+            gameOverMessage.innerHTML = `You Win! Congratulations!`;
             this.gameReset();
         } else {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'lose';
-            gameOverMessage.innerHTML = 'You Lose! Better luck next time!';
+            gameOverMessage.innerHTML = `You Lose! Better luck next time!`;
             this.gameReset();
         }
     }
@@ -91,16 +91,18 @@ class Game {
      * @param   {HTMLButtonElement} button  -   The clicked button element
      */
     handleInteraction(button) {
-        button.disabled = true;
-        if (this.activePhrase.checkLetter(button.innerHTML)) {
-            button.className = 'chosen';
-            this.activePhrase.showMatchedLetter(button.innerHTML);
-            if (this.checkForWin()) {
-                this.gameOver(this.checkForWin());
+        if (button !== undefined) {
+            button.disabled = true;
+            if (this.activePhrase.checkLetter(button.innerHTML)) {
+                button.className = 'chosen';
+                this.activePhrase.showMatchedLetter(button.innerHTML);
+                if (this.checkForWin()) {
+                    this.gameOver(this.checkForWin());
+                }
+            } else {
+                button.className = 'wrong';
+                this.removeLife();
             }
-        } else {
-            button.className = 'wrong';
-            this.removeLife();
         }
     }
 
@@ -120,10 +122,13 @@ class Game {
     }
 
     handleKeyup(e) {
-        const keys = document.getElementsByTagName('button');
-        for (let key of keys) {
-            if (e.key === key.innerHTML) {
-                return key;
+        const keys = document.getElementsByClassName('key');
+        const gameOverMessage = document.getElementById('game-over-message');
+        if (gameOverMessage.parentElement.style.display !== '') {
+            for (let key of keys) {
+                if (e.key.toLowerCase() === key.innerHTML) {
+                    return key;
+                }
             }
         }
     }
