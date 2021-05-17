@@ -1,6 +1,7 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Game.js */
+/************************************************
+Treehouse FSJS Techdegree:
+Project 4 - Phrase Hunter Game
+************************************************/
 
 class Game {
     constructor() {
@@ -111,6 +112,9 @@ class Game {
         }
     }
 
+    /**
+     * Resets phrase, keys, and hearts once game is over
+     */
     gameReset() {
         document.getElementById('phrase').firstElementChild.innerHTML = '';
         const keys = document.getElementsByTagName('button');
@@ -126,6 +130,9 @@ class Game {
         }
     }
 
+    /**
+     * Handles keyup events ONLY if game has started
+     */
     handleKeyup(e) {
         const keys = document.getElementsByClassName('key');
         const gameOverMessage = document.getElementById('game-over-message');
