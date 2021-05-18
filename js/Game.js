@@ -79,15 +79,16 @@ class Game {
      */
     gameOver(gameWon) {
         const gameOverMessage = document.getElementById('game-over-message');
+        const phraseReveal = `<br><br>Phrase:<br>"${game.activePhrase.phrase}"`;
         if (gameWon) {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'win';
-            gameOverMessage.innerHTML = `You Win! Congratulations!`;
+            gameOverMessage.innerHTML = `You Win! Congratulations! ${phraseReveal}`;
             this.gameReset();
         } else {
             gameOverMessage.parentElement.style.display = '';
             gameOverMessage.parentElement.className = 'lose';
-            gameOverMessage.innerHTML = `You Lose! Better luck next time!`;
+            gameOverMessage.innerHTML = `You Lose! Better luck next time! ${phraseReveal}`;
             this.gameReset();
         }
     }
