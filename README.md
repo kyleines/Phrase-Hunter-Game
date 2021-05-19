@@ -6,13 +6,18 @@ By selecting one letter at a time, figure out the hidden phrase to win the game!
 
 This game's features include: \
 :heavy_check_mark: Ten phrases cycled through randomly. \
-:heavy_check_mark: Case-insensitive keyboard functionality. \
-:heavy_check_mark: Updated onscreen keyboard style (styles.css - lines 134 & 141).
+:heavy_check_mark: Case-insensitive keyboard functionality.
 
 Thanks for visiting! \
 Feedback, follows, and stars are all appreciated!
 
 -Kyle
+
+<br>
+
+Developer's Notes: \
+Updated background-color to linear-gradient at line 31 in styles.css. \
+Updated onscreen keyboard's selected keys' colors (red for wrong, green for right) at lines 135 & 142 in styles.css.
 
 <br>
 <br>
