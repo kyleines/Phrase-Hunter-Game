@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background: linear-gradient(#9198e5, #e664b4);     /* Changed from no background */ 
 }
 
 li, ol, ul {
@@ -131,14 +132,14 @@ button {
 }
 
 .chosen {
-  background: var(--color-win);         /* Original color: #3a3f58 */
+  background: var(--color-win);              /* Changed from color: #3a3f58 */
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #FFFFFF;                /* Original color: #f7a964 */
+  background: var(--color-lose);             /* Changed from color: #f7a964 */
   color: #FFFFFF;
 }
 
@@ -157,6 +158,13 @@ button {
   padding: 14px 16px 16px 14px;
   border-bottom: solid 4px rgba(0, 0, 0, 0);
   border-right: solid 3px rgba(0, 0, 0, 0);
+}
+
+
+/* Scoreboard */
+
+#scoreboard {
+  /* background:; */
 }
 
 
