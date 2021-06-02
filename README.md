@@ -2,7 +2,7 @@
 
 ### Welcome to my Phrase Hunter Game for the Team Treehouse: FSJS Techdegree - Unit 4 Project.
 
-This project is hosted by [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) at [kyleines.github.io/Phrase-Hunter-Game](https://kyleines.github.io/Phrase-Hunter-Game/).
+This project is hosted by [GitHub Pages](https://docs.github.com/en/pages) at [kyleines.github.io/Phrase-Hunter-Game](https://kyleines.github.io/Phrase-Hunter-Game/).
 
 By selecting one letter at a time, figure out the hidden phrase to win the game!
 
